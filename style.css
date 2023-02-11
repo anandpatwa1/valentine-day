@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap'); 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    background-color: #f2acac;
+    background-image: url(./img/main\ bg.avif);
+    background-position: center;
+    background-size: cover;
+}
+#open{
+    display: none;
+}
+.card{
+   
+    height: 80vmin;
+    width: 70vmin;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+    margin-left: 8%;
+}
+.front-page{
+    position: relative;
+    background: #fff0f3;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgb(0, 0, 0,.15), 30px 0 50px rgb(0, 0, 0,.3);
+    transition: 3s;
+    border: 2px solid  #d04e4e;
+
+}
+.front-page::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: #d04e4e;
+    top: 5%;
+    left: 5%;
+}
+.middle-page{
+    position: absolute;
+    background-color: #fff0f3;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    box-shadow: inset 100px 20px 100px rgb(0, 0, 0,.22), 100px 20px 100px rgb(0, 0, 0,.1);
+    transition: 13s;transform-origin: left;
+    border: 2px solid  #d04e4e;
+
+}
+
+.main-page {
+    position: absolute;
+    background-color: #fff0f3;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    box-shadow: inset 100px 20px 100px rgb(0, 0, 0,.22), 100px 20px 100px rgb(0, 0, 0,.1);
+    
+}
+.open{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 100;
+    cursor: pointer;
+}
+#open:checked ~ .front-page ,#open:checked ~ .middle-page {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgb(0, 0, 0,.15), 30px 0 50px rgb(0, 0, 0,.3);
+    
+}
+#open:checked ~ .front-page::before {
+    z-index: 5;
+    background-color: #fff0f3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: inset 100px 20px 100px rgb(0, 0, 0,.15), 30px 0 50px rgb(0, 0, 0,.3);
+}
+
+
+/* main content */
+/* Page 1 */
+
+.front-page .note {
+    position: relative;
+    width: 55%;
+    height: 55%;
+    top: 20%;
+    left: 20%;
+    color: #333;
+    background-color: #fff0f3;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    font-size: x-large;
+    text-align: center;
+}
+.big-heart-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.front-page .heart{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 20%;
+}
+.big-heart {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    /* height: 300px; */
+    width: 80%;
+    z-index: 11;
+}
+/* page 3 */
+.main-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid  #d04e4e;
+}
+.main-page .heading {
+    text-align: center;
+    font-size: xx-large;  
+}
+.main-page .heading span{
+    color: #d04e4e;
+}
+.main-page .bg {
+    width: 70%;
+   
+}
